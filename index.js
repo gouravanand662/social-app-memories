@@ -16,6 +16,10 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Hello too memories API');
+})
+
 // //serving the frontend
 // app.use(express.static(path.join(__dirname, "./client/build")));
 // app.get("*", function (_, res) {
