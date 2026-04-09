@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,4 +23,998 @@
 
     
   </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>vServe Web Solutions – A Reputed Website Development Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #e8222a;
+      --dark: #1a1a2e;
+      --text: #444;
+      --light-bg: #f7f7f7;
+      --white: #ffffff;
+      --border: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      background: #222;
+      color: #ccc;
+      font-size: 12px;
+      padding: 6px 0;
+      text-align: right;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-bar a { color: #ccc; text-decoration: none; }
+    .top-bar a:hover { color: var(--red); }
+
+    /* ── HEADER / NAV ── */
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .logo img { height: 52px; }
+    .logo span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+    .logo span em { color: var(--red); font-style: normal; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    nav ul li { position: relative; }
+    nav ul li a {
+      display: block;
+      padding: 8px 14px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: #333;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      border-radius: 3px;
+      transition: color .2s, background .2s;
+    }
+    nav ul li a:hover, nav ul li a.active { color: var(--red); }
+    nav .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--white);
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      border-top: 3px solid var(--red);
+      z-index: 100;
+    }
+    nav .dropdown li a {
+      padding: 10px 18px;
+      font-size: 12.5px;
+      border-radius: 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    nav ul li:hover .dropdown { display: block; }
+    .nav-phone {
+      background: var(--red);
+      color: var(--white) !important;
+      border-radius: 4px !important;
+      padding: 8px 16px !important;
+    }
+    .nav-phone:hover { background: #c0141b !important; color: #fff !important; }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── HERO SLIDER ── */
+    .hero {
+      background: linear-gradient(135deg, #0d1b3e 0%, #1a3a6b 60%, #c0141b 100%);
+      color: var(--white);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-text h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 12px;
+    }
+    .hero-text h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 span { color: #ff6b6b; }
+    .hero-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,.8);
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-red { background: var(--red); color: var(--white); }
+    .btn-red:hover { background: #c0141b; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.6); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero-image .mockup {
+      width: 320px;
+      height: 220px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      backdrop-filter: blur(6px);
+    }
+    .mockup-icon { font-size: 60px; }
+    .mockup p { font-size: 14px; color: rgba(255,255,255,.7); font-style: italic; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      font-size: 15px;
+      color: #777;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+    .section-divider {
+      width: 50px;
+      height: 4px;
+      background: var(--red);
+      margin: 14px auto 20px;
+      border-radius: 2px;
+    }
+
+    /* ── WHO WE ARE ── */
+    .about { background: var(--white); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .about-text .red-line { width: 40px; height: 4px; background: var(--red); margin-bottom: 20px; border-radius: 2px; }
+    .about-text p { font-size: 14.5px; margin-bottom: 16px; color: #555; }
+    .about-btns { display: flex; gap: 14px; margin-top: 24px; }
+    .btn-dark { background: var(--dark); color: var(--white); }
+    .btn-dark:hover { background: #0d1b3e; }
+    .about-visual {
+      display: flex;
+      justify-content: center;
+    }
+    .about-visual .card-stack {
+      position: relative;
+      width: 340px;
+      height: 280px;
+    }
+    .card-stack .card {
+      position: absolute;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .card-stack .card:nth-child(1) { width: 200px; height: 160px; background: #0d1b3e; top: 0; left: 0; }
+    .card-stack .card:nth-child(2) { width: 200px; height: 160px; background: var(--red); bottom: 0; right: 0; }
+    .card-stack .card:nth-child(3) { width: 160px; height: 120px; background: #fff; border: 2px solid #e0e0e0; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 30px; }
+
+    /* ── WHAT WE DO ── */
+    .services { background: var(--light-bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    .service-card .svc-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+    .service-card:nth-child(1) .svc-img { background: linear-gradient(135deg,#0d1b3e,#1a3a6b); }
+    .service-card:nth-child(2) .svc-img { background: linear-gradient(135deg,#c0141b,#e8222a); }
+    .service-card:nth-child(3) .svc-img { background: linear-gradient(135deg,#1a3a6b,#2e6bb8); }
+    .service-card .svc-body { padding: 24px; }
+    .service-card h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .service-card p { font-size: 13.5px; color: #666; margin-bottom: 16px; }
+    .read-more {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--red);
+      text-decoration: none;
+    }
+    .read-more:hover { text-decoration: underline; }
+
+    /* ── TECHNOLOGIES ── */
+    .tech { background: var(--white); }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .tech-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: border-color .3s, box-shadow .3s;
+      position: relative;
+    }
+    .tech-card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(232,34,42,.08); }
+    .tech-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      border-radius: 8px 8px 0 0;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .tech-card:hover::before { opacity: 1; }
+    .tech-card h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .tech-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* ── STATS BANNER ── */
+    .stats {
+      background: linear-gradient(135deg, #0d1b3e, #1a3a6b);
+      padding: 60px 0;
+      color: var(--white);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .stat-item h3 span { color: #ff6b6b; }
+    .stat-item p { font-size: 13px; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--light-bg); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testi-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      position: relative;
+    }
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 14px; right: 20px;
+      font-size: 60px;
+      color: #f0f0f0;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testi-card p { font-size: 13.5px; color: #555; font-style: italic; margin-bottom: 20px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #0d1b3e, #1a3a6b);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 18px;
+    }
+    .testi-info strong { display: block; font-size: 13px; font-weight: 700; color: var(--dark); }
+    .testi-info span { font-size: 12px; color: #999; }
+    .stars { color: #f5a623; font-size: 13px; margin-bottom: 12px; }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .cta p { font-size: 16px; color: rgba(255,255,255,.85); margin-bottom: 32px; }
+    .btn-white { background: #fff; color: var(--red); }
+    .btn-white:hover { background: #f0f0f0; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--white); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .contact-info h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .contact-info .red-line { width: 40px; height: 4px; background: var(--red); margin-bottom: 20px; border-radius: 2px; }
+    .contact-detail { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .contact-icon {
+      width: 42px; height: 42px; min-width: 42px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 18px;
+    }
+    .contact-detail p { font-size: 14px; color: #555; }
+    .contact-detail strong { display: block; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 14px;
+      transition: border-color .2s;
+      outline: none;
+      color: #333;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--red); }
+    .contact-form textarea { height: 120px; resize: vertical; }
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ── FOOTER ── */
+    footer { background: #111; color: #aaa; }
+    .footer-top { padding: 60px 0 40px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand .logo-text {
+      font-family: 'Raleway', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .footer-brand .logo-text em { color: var(--red); font-style: normal; }
+    .footer-brand p { font-size: 13px; margin-top: 14px; line-height: 1.8; }
+    .footer-col h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 28px; height: 2px;
+      background: var(--red);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 9px; }
+    .footer-col ul li a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--red); }
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+    }
+    .footer-bottom a { color: #aaa; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--red); }
+    .social-links { display: flex; gap: 10px; }
+    .social-links a {
+      width: 34px; height: 34px;
+      background: #222;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      transition: background .2s;
+    }
+    .social-links a:hover { background: var(--red); }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--red);
+      color: var(--white);
+      width: 40px; height: 40px;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: 999;
+    }
+    .back-top.visible { opacity: 1; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; }
+      .hero-image { display: none; }
+      .services-grid, .tech-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 2fr 2fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav ul { gap: 0; }
+      nav ul li a { padding: 8px 10px; font-size: 12px; }
+    }
+    @media (max-width: 600px) {
+      .services-grid, .tech-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 30px; }
+      .contact-form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <span>📧 <a href="mailto:info@vservewebsolution.com">info@vservewebsolution.com</a></span>
+    <span>📞 <a href="tel:+17868210740">+1 (786) 821-0740</a></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <span><em>v</em>Serve Web Solutions</span>
+      </div>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#about">Our Company</a></li>
+        <li>
+          <a href="#services">Services ▾</a>
+          <ul class="dropdown">
+            <li><a href="#">Website Design & Development</a></li>
+            <li><a href="#">Mobile App Development</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">E-Publishing</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="tel:+17868210740" class="nav-phone">📞 +1 (786) 821-0740</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h4>Web Design & Development</h4>
+        <h1>We Build <span>Powerful</span> Digital Experiences</h1>
+        <p>We bring the most advanced technologies under the most impressive methodologies to deliver outstanding, trustworthy and long-term business relationships.</p>
+        <div class="hero-btns">
+          <a href="#about" class="btn btn-red">Know More</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="mockup">
+          <div class="mockup-icon">💻</div>
+          <p>Web · Mobile · Digital</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2># Who we are</h2>
+        <div class="red-line"></div>
+        <p>With over a decade of experience, we know that every business needs to succeed on the web. Be it website design / development, or mobile apps development or ePublishing – We're here for this simple reason: to help large and small businesses succeed online.</p>
+        <p>We understand your business model and deliver the best end product that will help your business attain maximum growth. Every Website, Social Media Page, Online Marketing program and eCommerce solution we build starts with an in-depth review.</p>
+        <p>Our experienced team of web / graphic designers and web developers are committed to provide the best solutions according to your needs. We're always here to assist you.</p>
+        <div class="about-btns">
+          <a href="#" class="btn btn-red">Know More</a>
+          <a href="#contact" class="btn btn-dark">Get In Touch</a>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="card-stack">
+          <div class="card">🌐</div>
+          <div class="card">📱</div>
+          <div class="card">📈</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Do</h2>
+      <div class="section-divider"></div>
+      <p>We understand your business model and deliver the best end product that will help your business attain maximum growth.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-img">🌐</div>
+        <div class="svc-body">
+          <h3>Website Development</h3>
+          <p>We design and develop high-performing, responsive websites tailored to your brand and business goals using the latest technologies.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-img">📱</div>
+        <div class="svc-body">
+          <h3>Mobile Application</h3>
+          <p>Native and cross-platform mobile applications for iOS and Android that deliver intuitive, engaging user experiences.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-img">📊</div>
+        <div class="svc-body">
+          <h3>Digital Marketing</h3>
+          <p>Result-driven digital marketing strategies including SEO, PPC, social media, and content marketing to grow your online presence.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIES -->
+<section class="tech" id="tech">
+  <div class="container">
+    <div class="section-header">
+      <h2>Technologies</h2>
+      <div class="section-divider"></div>
+      <p>We work with the best in class technologies to deliver robust, scalable solutions.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h4>PHP Expertise</h4>
+        <p>React.js, Vue.js, Next.js, Angular.js, CakePHP, Zend Framework</p>
+      </div>
+      <div class="tech-card">
+        <h4>Framework Development</h4>
+        <p>Laravel Development, Python Development, PHP-MVC Development</p>
+      </div>
+      <div class="tech-card">
+        <h4>Microsoft .Net Services</h4>
+        <p>SaaS Cloud applications, Desktop Applications, Mobile Apps – iOS, Android, ASP.NET MVC, C#.NET, VB.NET</p>
+      </div>
+      <div class="tech-card">
+        <h4>E-Shop Development</h4>
+        <p>WooCommerce, Magento Development, Shopify Development, OpenCart Development</p>
+      </div>
+      <div class="tech-card">
+        <h4>CMS Development</h4>
+        <p>WordPress Development, Joomla Development, Drupal Development, Silver Stripe Development</p>
+      </div>
+      <div class="tech-card">
+        <h4>Architecture Design</h4>
+        <p>Solution Architecture, Business Architecture, Functional Architecture and implementation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>10<span>+</span></h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-item">
+        <h3>500<span>+</span></h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-item">
+        <h3>200<span>+</span></h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item">
+        <h3>50<span>+</span></h3>
+        <p>Team Members</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>What People Say About Us</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Excellent Service for Website Designing and Development, Digital marketing, and E-publishing. I recommend vServe Web Solutions to everyone who's looking for a reliable Software Company and marketing Agency.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>Matthew Adams</strong>
+            <span>City of London, GB</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>The work done on this project was excellent – the output was of a very high standard and the turn around was exceptionally quick. It was a completely pain free project with a highly favourable outcome.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>Ryan Morrison</strong>
+            <span>City of London, GB</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Very talented. Launched the project on time at no additional cost. Great work, would definitely recommend to anyone looking for quality web development services.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>Chris Carter</strong>
+            <span>Oakville, CA</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Job well done! Very responsive and efficient. Will continue to offer work. Extremely happy with their work! Looking forward to more projects in the future.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>Lindsey P.</strong>
+            <span>Montana City, MT, US</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>The work was executed promptly and the brief followed to the letter. I will have no hesitation in using this team for future projects. Highly professional team!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>Richard O.</strong>
+            <span>Newton Aycliffe, GB</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Excellent work and great communication over Skype which is absolutely priceless. Thank you – very easy to work with! Will definitely come back for future projects.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👤</div>
+          <div class="testi-info">
+            <strong>John W.</strong>
+            <span>City of Westminster, GB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta">
+  <div class="container">
+    <h2>Have an Idea in Mind?</h2>
+    <p>Let's Talk! We'd love to hear about your project and discuss how we can help.</p>
+    <a href="#contact" class="btn btn-white">Get In Touch</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>Get in touch</h2>
+        <div class="red-line"></div>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <strong>Address</strong>
+            <p>72-11 Austin St #209 Forest Hills, New York 11375, USA</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+17868210740" style="color:#555;text-decoration:none;">+1 (786) 821-0740</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:info@vservewebsolution.com" style="color:#555;text-decoration:none;">info@vservewebsolution.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="contact-form-row">
+          <input type="text" placeholder="Name *" required />
+          <input type="text" placeholder="Contact Number *" required />
+        </div>
+        <input type="email" placeholder="Email Address *" required />
+        <textarea placeholder="Message *"></textarea>
+        <button type="button" class="btn btn-red" style="width:100%;padding:13px;font-size:14px;">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand footer-col">
+          <div class="logo-text"><em>v</em>Serve Web Solutions</div>
+          <p>With over a decade of experience, we help large and small businesses succeed online. Easy solutions that grow your business.</p>
+          <div class="social-links" style="margin-top:20px;">
+            <a href="#" title="Facebook">🌐</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Website Design</a></li>
+            <li><a href="#">Mobile App Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">E-Publishing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Technologies</h4>
+          <ul>
+            <li><a href="#">WordPress</a></li>
+            <li><a href="#">Laravel</a></li>
+            <li><a href="#">React.js</a></li>
+            <li><a href="#">Shopify</a></li>
+            <li><a href="#">Magento</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>Copyright © 2011–2026 <a href="#">vServeWebsolution</a>. All rights reserved.</p>
+      <p><a href="#">About us</a> | <a href="#">Careers</a> | <a href="#">Contact us</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#home" class="back-top" id="backTop">↑</a>
+
+<script>
+  // Back to top visibility
+  window.addEventListener('scroll', () => {
+    document.getElementById('backTop').classList.toggle('visible', window.scrollY > 300);
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Simple counter animation for stats
+  const counters = document.querySelectorAll('.stat-item h3');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.textContent);
+        let count = 0;
+        const step = Math.ceil(target / 60);
+        const tick = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            clearInterval(tick);
+            count = target;
+          }
+          el.innerHTML = count + '<span>+</span>';
+        }, 25);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+</script>
+
+
+
+     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+        <script type="module">
+        	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        
+        	createChat({
+        		webhookUrl: 'https://sb55.app.n8n.cloud/webhook/141b12ca-7aa0-4520-bf75-6b6a878cb2bb/chat'
+        	});
+        </script>
+
+
+  
+</body>
 </html>
